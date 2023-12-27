@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'register.dart';
+import 'search.dart';
 
 class Login extends StatefulWidget{
   @override
@@ -149,7 +150,14 @@ class _LoginState extends State<Login>{
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 16, 26, 100)
                           ),
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.pushReplacement<void, void>(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) => Search(),
+                              ),
+                            );
+                          },
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             child: Text(
@@ -176,7 +184,7 @@ class _LoginState extends State<Login>{
                           style: TextStyle(
                             color: Color.fromARGB(255, 86, 104, 239)
                           ),),
-                        )
+                        ),
                       ],
                     )
                   ),

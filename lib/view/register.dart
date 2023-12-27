@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'search.dart';
 
 class Register extends StatefulWidget{
   @override
@@ -15,6 +16,8 @@ class _RegisterState extends State<Register>{
 
   void dispose(){
     _emailController.dispose();
+    _fullNameController.dispose();
+    _phoneController.dispose();
     _passwordController.dispose();
     super.dispose();
   }
@@ -219,7 +222,14 @@ class _RegisterState extends State<Register>{
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromARGB(255, 16, 26, 100)
                           ),
-                          onPressed: (){},
+                          onPressed: (){
+                            Navigator.pushReplacement<void, void>(
+                              context,
+                              MaterialPageRoute<void>(
+                                builder: (BuildContext context) => Search(),
+                              ),
+                            );
+                          },
                           child: Container(
                             width: MediaQuery.of(context).size.width,
                             child: Text(
